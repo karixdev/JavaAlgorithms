@@ -3,8 +3,6 @@ package com.github.karixdev.sorting;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-
 public class BubbleSortTest {
 
     private final BubbleSort<Integer> integerBubbleSort = new BubbleSort<>();
@@ -13,42 +11,42 @@ public class BubbleSortTest {
     @Test
     public void GivenEmptyList_WhenSort_ThenDoesNothing() {
         // given
-        List<Integer> list = List.of();
+        Integer[] arr = {};
 
         // when
-        integerBubbleSort.sort(list);
+        integerBubbleSort.sort(arr);
 
         // then
-        Assertions.assertEquals(List.of(), list);
+        Assertions.assertArrayEquals(new Integer[] {}, arr);
     }
 
     @Test
     public void GivenNonEmptyIntegerList_WhenSort_ThenSortsElementCorrectly() {
         // given
-        List<Integer> list = List.of(0, -1, 20, 13, 120, 11, 11, 15);
+        Integer[] arr = {0, -1, 20, 13, 120, 11, 11, 15};
 
         // when
-        integerBubbleSort.sort(list);
+        integerBubbleSort.sort(arr);
 
         // then
-        Assertions.assertEquals(
-                List.of(-1, 0, 11, 11, 13, 15, 20, 13),
-                list
+        Assertions.assertArrayEquals(
+                new Integer[] {-1, 0, 11, 11, 13, 15, 20, 120},
+                arr
         );
     }
 
     @Test
     public void GivenNonEmptyStringList_WhenSort_ThenSortsElementCorrectly() {
         // given
-        List<String> list = List.of("aa", "a", "", "a", "aaaa", "aaa", "aa");
+        String[] arr = {"aa", "a", "", "a", "aaaa", "aaa", "aa"};
 
         // when
-        stringBubbleSort.sort(list);
+        stringBubbleSort.sort(arr);
 
         // then
-        Assertions.assertEquals(
-                List.of("", "a", "a", "aa", "aa", "aaa", "aaaa"),
-                list
+        Assertions.assertArrayEquals(
+                new String[] {"", "a", "a", "aa", "aa", "aaa", "aaaa"},
+                arr
         );
     }
 }

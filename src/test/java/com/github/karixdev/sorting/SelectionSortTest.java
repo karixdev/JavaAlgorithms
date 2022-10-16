@@ -1,5 +1,6 @@
 package com.github.karixdev.sorting;
 
+import com.github.karixdev.sorting.helper.SortingTestCasesHolder;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -14,21 +15,21 @@ public class SelectionSortTest implements ISortingAlgorithmTest {
         SortingAlgorithms.selectionSort(arr);
 
         // then
-        Assertions.assertArrayEquals(new Integer[] {}, arr);
+        Assertions.assertArrayEquals(new Integer[]{}, arr);
     }
 
     @Test
     @Override
     public void GivenNonEmptyIntegerList_WhenSort_ThenSortsElementCorrectly() {
         // given
-        Integer[] arr = {0, -1, 20, 13, 120, 11, 11, 15};
+        Integer[] arr = SortingTestCasesHolder.integerTestCase.getNonSorted();
 
         // when
         SortingAlgorithms.selectionSort(arr);
 
         // then
         Assertions.assertArrayEquals(
-                new Integer[] {-1, 0, 11, 11, 13, 15, 20, 120},
+                SortingTestCasesHolder.integerTestCase.getSorted(),
                 arr
         );
     }
@@ -37,14 +38,14 @@ public class SelectionSortTest implements ISortingAlgorithmTest {
     @Override
     public void GivenNonEmptyStringList_WhenSort_ThenSortsElementCorrectly() {
         // given
-        String[] arr = {"aa", "a", "", "a", "aaaa", "aaa", "aa"};
+        String[] arr = SortingTestCasesHolder.stringTestCase.getNonSorted();
 
         // when
         SortingAlgorithms.selectionSort(arr);
 
         // then
         Assertions.assertArrayEquals(
-                new String[] {"", "a", "a", "aa", "aa", "aaa", "aaaa"},
+                SortingTestCasesHolder.stringTestCase.getSorted(),
                 arr
         );
     }

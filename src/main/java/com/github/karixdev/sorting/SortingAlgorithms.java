@@ -20,7 +20,7 @@ public class SortingAlgorithms {
 
     /**
      * Link: <a href="https://en.wikipedia.org/wiki/Selection_sort">wikipedia page</a>
-     * Average time complexity: O(n^2)
+     * <p>Average time complexity: O(n^2)</p>
      */
     public static <T extends Comparable<T>> void selectionSort(T[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {

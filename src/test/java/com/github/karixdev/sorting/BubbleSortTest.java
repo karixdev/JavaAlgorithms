@@ -4,17 +4,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class BubbleSortTest {
-
-    private final BubbleSort<Integer> integerBubbleSort = new BubbleSort<>();
-    private final BubbleSort<String> stringBubbleSort = new BubbleSort<>();
-
     @Test
     public void GivenEmptyList_WhenSort_ThenDoesNothing() {
         // given
         Integer[] arr = {};
 
         // when
-        integerBubbleSort.sort(arr);
+        SortingAlgorithms.bubbleSort(arr);
 
         // then
         Assertions.assertArrayEquals(new Integer[] {}, arr);
@@ -26,7 +22,7 @@ public class BubbleSortTest {
         Integer[] arr = {0, -1, 20, 13, 120, 11, 11, 15};
 
         // when
-        integerBubbleSort.sort(arr);
+        SortingAlgorithms.bubbleSort(arr);
 
         // then
         Assertions.assertArrayEquals(
@@ -41,7 +37,7 @@ public class BubbleSortTest {
         String[] arr = {"aa", "a", "", "a", "aaaa", "aaa", "aa"};
 
         // when
-        stringBubbleSort.sort(arr);
+        SortingAlgorithms.bubbleSort(arr);
 
         // then
         Assertions.assertArrayEquals(

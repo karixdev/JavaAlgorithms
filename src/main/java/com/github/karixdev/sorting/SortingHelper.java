@@ -6,6 +6,15 @@ public class SortingHelper {
 
         int i = lowIdx - 1;
 
+        /*
+        What this for loop does is move any object smaller than pivot to the beginning of an array
+
+        For example:
+        having such array: 1 -1 2 0
+        then pivot = 0
+        and the result is: -1 1 2 0
+
+         */
         for (int j = lowIdx; j < highIdx; j++) {
             if (arr[j].compareTo(pivot) < 0) {
                 i++;
@@ -13,7 +22,14 @@ public class SortingHelper {
             }
         }
 
+        /*
+        Here we move pivot to the position to the right of the last object smaller than pivot
+         */
         swap(arr, i + 1, highIdx);
+
+        /*
+        Return index of current pivot position
+         */
         return i + 1;
     }
 

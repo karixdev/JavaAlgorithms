@@ -5,3 +5,4 @@ Currently implemented:
 - Sorting:
   - Bubble Sort
   - Selection Sort
+  - Quick Sort

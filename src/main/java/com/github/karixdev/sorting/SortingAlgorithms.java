@@ -36,4 +36,27 @@ public class SortingAlgorithms {
             arr[i] = temp;
         }
     }
+
+    /**
+     * Link: <a href="https://en.wikipedia.org/wiki/Quicksort">wikipedia page</a>
+     * <p>Average time complexity: O(n * log(n))</p>
+     */
+    public static <T extends Comparable<T>> void quickSort(T[] arr) {
+        if (arr.length == 0) {
+            return;
+        }
+
+        _quickSort(arr, 0, arr.length - 1);
+    }
+
+    private static <T extends Comparable<T>> void _quickSort(T[] arr, int lowIdx, int highIdx) {
+        if (lowIdx >= highIdx) {
+            return;
+        }
+
+        int pivot = SortingHelper.partition(arr, lowIdx, highIdx);
+
+        _quickSort(arr, lowIdx, pivot - 1);
+        _quickSort(arr, pivot + 1, highIdx);
+    }
 }
